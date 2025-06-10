@@ -1,6 +1,12 @@
 const TelegramBot = require('node-telegram-bot-api');
 const { scrapeMercadoLivre, slugify } = require('./tools/scrape');
 
+const http = require('http');
+http.createServer((req, res) => {
+  res.write("Bot ativo");
+  res.end();
+}).listen(process.env.PORT || 80);
+
 const token = '7860108959:AAGvynERIzHpdUJeWmU-aubRNnXAaiZjUno';
 const bot = new TelegramBot(token, {polling: true});
 
