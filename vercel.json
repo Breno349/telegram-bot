@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "functions": {
+    "api/bot.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/",
+      "dest": "index.js"
+    }
+  ]
+}
+
