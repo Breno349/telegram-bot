@@ -4,7 +4,7 @@ const { downloadTikTokVideo, deleteVideo } = require('./tools/tiktok');
 const http = require('http');
 
 http.createServer((req, res) => {
-  res.write("Bot ativo - OK");
+  res.write("Bot ativo - OK!");
   res.end();
 }).listen(process.env.PORT || 80);
 
