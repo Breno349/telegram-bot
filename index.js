@@ -9,8 +9,7 @@ http.createServer((req, res) => {
 }).listen(process.env.PORT || 80);
 
 const token = '7860108959:AAGvynERIzHpdUJeWmU-aubRNnXAaiZjUno';
-const bot = new TelegramBot(token); //, { polling: true });
-bot.setWebHook('https://telegram-bot-3pp2.onrender.com/')
+const bot = new TelegramBot(token, { polling: false });
 
 bot.onText(/\/menu(?: (.+))?/, (msg, match) => {
   const chatId = msg.chat.id;
