@@ -9,7 +9,7 @@ http.createServer((req, res) => {
   res.end();
 }).listen(process.env.PORT || 80);
 
-const token = 'SEU_TOKEN_DO_BOT';
+const token = '7860108959:AAGvynERIzHpdUJeWmU-aubRNnXAaiZjUno';
 const bot = new TelegramBot(token, { polling: true });
 
 // Comando /menu
