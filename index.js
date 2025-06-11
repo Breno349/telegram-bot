@@ -3,16 +3,15 @@ const { scrapeMercadoLivre, slugify } = require('./tools/scrape');
 const { downloadTikTokVideo, deleteVideo } = require('./tools/tiktok');
 const http = require('http');
 
-// Manter ativo no Render ou Vercel
 http.createServer((req, res) => {
   res.write("Bot ativo");
   res.end();
 }).listen(process.env.PORT || 80);
 
 const token = '7860108959:AAGvynERIzHpdUJeWmU-aubRNnXAaiZjUno';
-const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token); //, { polling: true });
+bot.setWebHook('https://telegram-bot-3pp2.onrender.com/')
 
-// Comando /menu
 bot.onText(/\/menu(?: (.+))?/, (msg, match) => {
   const chatId = msg.chat.id;
   const user = msg.from.first_name || '<no-name>';
