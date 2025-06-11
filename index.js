@@ -15,10 +15,10 @@ bot.onText(/\/menu(?: (.+))?/, (msg, match) => {
   const chatId = msg.chat.id;
   const user = msg.from.first_name || '<no-name>';
   bot.sendMessage(chatId, `📋 *${user}*, aqui está o menu:\n
-1. /ml \[produto\] — Buscar produtos no Mercado Livre
-2. /tk \[link\] — Baixar vídeo do TikTok
-3. /echo \[mensagem\] — Repetir mensagem
-4. /ping — Calcular a latência da mensagem`,
+1. \t/ml **[produto]** — Buscar produtos no Mercado Livre
+2. \t/tk **[link]** — Baixar vídeo do TikTok
+3. \t/echo **[mensagem]** — Repetir mensagem
+4. \t/ping — Calcular a latência da mensagem`,
   { parse_mode: 'Markdown' });
 });
 
