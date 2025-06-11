@@ -5,11 +5,15 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@prevter/tiktok-scraper": "^1.0.1",
     "axios": "^1.9.0",
     "cheerio": "^1.1.0",
     "csv-writer": "^1.6.0",
+    "downloadtiktok": "^3.0.0",
     "fs": "^0.0.1-security",
-    "node-telegram-bot-api": "^0.66.0"
+    "get-video-id": "^4.1.7",
+    "node-telegram-bot-api": "^0.66.0",
+    "tiktok-search": "^2.0.3"
   },
   "devDependencies": {
     "@types/node-telegram-bot-api": "^0.64.9"
