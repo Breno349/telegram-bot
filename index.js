@@ -23,6 +23,21 @@ bot.onText(/\/menu(?: (.+))?/, (msg, match) => {
   { parse_mode: 'Markdown' });
 });
 
+bot.onText(/\/ping/, async (msg) => {
+  const chatId = msg.chat.id;
+  const start = process.hrtime(); // Alta resolução
+
+  const sentMsg = await bot.sendMessage(chatId, '🏓 Medindo ping...');
+
+  const diff = process.hrtime(start);
+  const pingMs = (diff[0] * 1e3 + diff[1] / 1e6).toFixed(2); // segundos e nanos => ms
+
+  bot.editMessageText(`🏓 Pong! Tempo de resposta: ${pingMs}ms`, {
+    chat_id: sentMsg.chat.id,
+    message_id: sentMsg.message_id
+  });
+});
+
 // Comando /echo
 bot.onText(/\/echo (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
