@@ -15,7 +15,7 @@ bot.onText(/\/menu (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const resp = match[1];
   const user = msg.from.first_name ? msg.from.first_name.toString() : '<no-name>'
-  bot.sendMessage(chatId,`_{user}_ -> olá ai o menu, se quiser saber procura!`)
+  bot.sendMessage(chatId,`**${user}** -> olá ai o menu, se quiser saber procura!`)
 });
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
@@ -75,6 +75,6 @@ bot.onText(/\/tk (.+)/, (msg, match) => {
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
   const user = msg.from.first_name ? msg.from.first_name.toString() : '<no-name>'
-  console.log( user+' -> '+msg )
+  console.log( user+' -> '+msg.toString() )
   //bot.sendMessage(chatId, 'Received your message '+(msg.from.first_name ? msg.from.first_name.toString() : 'no-name' ));
 });
