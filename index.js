@@ -9,13 +9,12 @@ http.createServer((req, res) => {
 }).listen(process.env.PORT || 80);
 
 const token = '7860108959:AAGvynERIzHpdUJeWmU-aubRNnXAaiZjUno';
-const bot = new TelegramBot(token, { polling: false });
+const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/menu(?: (.+))?/, (msg, match) => {
   const chatId = msg.chat.id;
   const user = msg.from.first_name || '<no-name>';
-  bot.sendMessage(chatId, `📋 *${user}*, aqui está o menu:
-
+  bot.sendMessage(chatId, `📋 *${user}*, aqui está o menu:\n
 1. /ml [produto] — Buscar produtos no Mercado Livre
 2. /tk [link] — Baixar vídeo do TikTok
 3. /echo [mensagem] — Repetir mensagem
