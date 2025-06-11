@@ -13,7 +13,7 @@ const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/menu(?: (.+))?/, (msg, match) => {
   const chatId = msg.chat.id;
-  const user = msg.from.first_name || '<no-name>';
+  const user = msg.from.first_name || '<sem-nome>';
   bot.sendMessage(chatId, `📋 *${user}*, aqui está o menu:\n
 1. \t/ml **[produto]** — Buscar produtos no Mercado Livre
 2. \t/tk **[link]** — Baixar vídeo do TikTok
